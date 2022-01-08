@@ -1,0 +1,21 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="cardImage">
+            <img [src]="catItem.img" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+            <div class="circleArrow">
+              <span class="icon"><i class="flaticon-next-2"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

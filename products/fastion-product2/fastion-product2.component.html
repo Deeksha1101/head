@@ -1,0 +1,106 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <!-- Static Active Card -->
+      <div class="item-col">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i
+              class="flaticon-heart-simple-shape-silhouette"
+              style="color: #fff"
+            ></i>
+          </div>
+          <div class="discountLabel">40% off</div>
+          <div class="cardImage">
+            <img
+              src="../../../../assets//img//fastion2/pink-blanket.png"
+              alt=""
+            />
+          </div>
+          <div class="cardBody">
+            <!-- Item Detail -->
+            <div class="itemDetailArea">
+              <div class="itemRating">
+                <p class="rating">
+                  <i class="flaticon-star"></i> 4.3 <span>(234)</span>
+                </p>
+              </div>
+              <div class="itemVarient">
+                <div class="itemStyle"></div>
+                <div class="itemStyle"></div>
+                <div class="itemStyle"></div>
+              </div>
+            </div>
+            <a href="#" class="">
+              Polyester Door Curtain Single Curtain (Self Design, Pink)
+            </a>
+            <div class="itemDiscrption">
+              <div class="cartArea">
+                <div class="amountArea">
+                  <span class="orignalPrice">rs. ₹700</span>
+                  <p class="amount">rs. 500</p>
+                </div>
+
+                <div class="addQuantity">
+                  <button class="addMinus">
+                    <i class="flaticon-minus"></i>
+                  </button>
+                  <span>2</span>
+                  <button class="addPlus">
+                    <i class="flaticon-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Card -->
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i class="flaticon-heart"></i>
+          </div>
+          <div class="discountLabel">40% off</div>
+
+          <div class="cardImage">
+            <img [src]="catItem.img" alt="" />
+          </div>
+          <div class="cardBody">
+            <!-- Item Detail -->
+            <div class="itemDetailArea">
+              <div class="itemRating">
+                <p class="rating">
+                  <i class="flaticon-star"></i> 4.3 <span>(234)</span>
+                </p>
+              </div>
+              <div class="itemVarient">
+                <div class="itemStyle"></div>
+                <div class="itemStyle"></div>
+                <div class="itemStyle"></div>
+              </div>
+            </div>
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+            <div class="itemDiscrption">
+              <div class="cartArea">
+                <div class="amountArea">
+                  <span class="orignalPrice">rs. ₹700</span>
+                  <p class="amount">rs. 500</p>
+                </div>
+
+                <div class="addBtn">
+                  <button class="addPlus">
+                    <i class="flaticon-shopping-basket"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

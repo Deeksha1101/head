@@ -1,0 +1,75 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <div class="item-col">
+        <div class="productCard">
+          <div class="discountLabel">25% off</div>
+          <div class="itemWishlist">
+            <i
+              class="flaticon-heart-simple-shape-silhouette"
+              style="color: #ff0000"
+            ></i>
+          </div>
+          <div class="cardImage">
+            <img src="../../../../assets/img/category5/snacks.png" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="#" class=""> Banana </a>
+            <div class="itemDiscrption">
+              <!-- Price and rating -->
+              <div class="amountArea">
+                <p class="amount">
+                  ₹50 <small class="orignalPrice">₹70</small>
+                </p>
+                <p class="varientSelect">10kg</p>
+              </div>
+            </div>
+
+            <button class="addQuantity">
+              <div class="addMinus">
+                <i class="flaticon-minus"></i>
+              </div>
+              <span>2</span>
+              <div class="addPlus">
+                <i class="flaticon-plus"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="discountLabel">25% off</div>
+          <div class="itemWishlist">
+            <i class="flaticon-heart-simple-shape-silhouette"></i>
+          </div>
+          <div class="cardImage">
+            <img [src]="catItem.img" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+            <div class="itemDiscrption">
+              <!-- Price and rating -->
+              <div class="amountArea">
+                <p class="amount">
+                  ₹50 <small class="orignalPrice">₹70</small>
+                </p>
+                <p class="varientSelect">
+                  250g <i class="flaticon-down-arrow"></i>
+                </p>
+              </div>
+            </div>
+
+            <button class="addBtn">
+              <div class="addPlus">
+                <i class="flaticon-plus"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

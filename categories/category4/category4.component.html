@@ -1,0 +1,23 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="circle">
+            <svg viewBox="0 0 100 100" attr.fill="{{ catItem.bgColor }}">
+              <circle cx="50" cy="50" r="50" />
+            </svg>
+            <div class="cardImage">
+              <img [src]="catItem.img" alt="" />
+            </div>
+          </div>
+          <div class="cardBody">
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

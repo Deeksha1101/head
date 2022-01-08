@@ -1,0 +1,18 @@
+<div class="bannerSlide">
+  <!-- Prev button -->
+  <div class="slideIconLeft" (click)="slidePrev()">
+    <i class="flaticon-next-1"></i>
+  </div>
+
+  <!-- Swiper -->
+  <swiper [config]="config">
+    <ng-template swiperSlide *ngFor="let slide of slides">
+      <img [src]="slide" alt="" />
+    </ng-template>
+  </swiper>
+
+  <!-- Next button -->
+  <div class="slideIcon SlideIconRight" (click)="slideNext()">
+    <i class="flaticon-next-1"></i>
+  </div>
+</div>

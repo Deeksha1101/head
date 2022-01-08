@@ -1,0 +1,85 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <!-- Static Active Card -->
+      <div class="item-col">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i
+              class="flaticon-heart-simple-shape-silhouette"
+              style="color: #ff0000"
+            ></i>
+          </div>
+          <div class="cartLabel">
+            <div class="addQuantity">
+              <button class="addMinus">
+                <i class="flaticon-minus"></i>
+              </button>
+              <span>2</span>
+              <button class="addPlus">
+                <i class="flaticon-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="cardImage">
+            <img src="../../../../assets//img//fastion3/shoes.png" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="#" class="">Lace-Up Walking Shoes </a>
+            <div class="itemDiscrption">
+              <div class="cartArea">
+                <div class="amountArea">
+                  <span class="orignalPrice">₹700</span>
+                  <p class="amount">₹500</p>
+                </div>
+
+                <div class="itemRating">
+                  <p class="rating">
+                    <i class="flaticon-star"></i> 4.3 <span>(234)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Card -->
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i class="flaticon-heart-simple-shape-silhouette"></i>
+          </div>
+          <div class="cartLabel">
+            <div class="addBtn">
+              <button class="addPlus">add<i class="flaticon-plus"></i></button>
+            </div>
+          </div>
+
+          <div class="cardImage">
+            <img [src]="catItem.img" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+            <div class="itemDiscrption">
+              <div class="cartArea">
+                <div class="amountArea">
+                  <span class="orignalPrice">₹700</span>
+                  <p class="amount">₹500</p>
+                </div>
+
+                <div class="itemRating">
+                  <p class="rating">
+                    <i class="flaticon-star"></i> 4.3 <span>(234)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

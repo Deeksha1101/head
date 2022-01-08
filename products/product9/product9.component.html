@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>product-style-nine</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="products">
+    <div class="product" *ngFor="let cartItem of categoryData">
+
+      <div>
+        <div class="img">
+          <img [src]="cartItem.img" alt="" class="productImg">
+          <div class="hide">
+            <div class="iconss">
+              <div class="icon">
+                <i class="flaticon-share"></i>
+              </div>
+
+              <div class="icon">
+                <i class="flaticon-heart-3"></i>
+              </div>
+            </div>
+            <div class="add">Add To Bag</div>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <p class="price"> <del>Rs.459</del> {{cartItem.price}}</p>
+        <p>{{cartItem.title}}</p>
+        <p>4.4 <img [src]="cartItem.star" alt="blueStar" class="blueStar"><img [src]="cartItem.star" alt="blueStar"
+            class="blueStar"><img [src]="cartItem.star" alt="blueStar" class="blueStar"><img [src]="cartItem.star"
+            alt="blueStar" class="blueStar"><img [src]="cartItem.star" alt="blueStar" class="blueStar">
+        </p>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</ion-content>

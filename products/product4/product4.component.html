@@ -1,0 +1,111 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <!-- Active Product -->
+      <div class="item-col">
+        <div class="productCard">
+          <div class="itemRating">
+            <p class="rating"><i class="flaticon-star"></i> 4.3</p>
+          </div>
+          <div class="itemVarient">
+            <p class="varientSelect">10kg</p>
+          </div>
+          <div class="itemWishlist">
+            <i
+              class="flaticon-heart-simple-shape-silhouette"
+              style="color: #ff0000"
+            ></i>
+          </div>
+          <div class="cardImage">
+            <img src="../../../../assets/img/category5/snacks.png" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="#" class=""> Banana </a>
+            <div class="itemDiscrption">
+              <p class="amount"><small class="orignalPrice">₹700</small>₹500</p>
+            </div>
+
+            <div class="cartArea">
+              <button class="addQuantity">
+                <div class="addMinus">
+                  <i class="flaticon-minus"></i>
+                </div>
+                <span>2</span>
+                <div class="addPlus">
+                  <i class="flaticon-plus"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Out Of Product -->
+      <div class="item-col">
+        <div class="productCard">
+          <div class="itemRating">
+            <p class="rating"><i class="flaticon-star"></i> 4.3</p>
+          </div>
+          <div class="itemVarient">
+            <p class="varientSelect">10kg</p>
+          </div>
+          <div class="itemWishlist">
+            <i
+              class="flaticon-heart-simple-shape-silhouette"
+              style="color: #ff0000"
+            ></i>
+          </div>
+          <div class="cardImage">
+            <img src="../../../../assets/img/category5/snacks.png" alt="" />
+            <div class="overlay">
+              <div class="stockOut">out of stock</div>
+            </div>
+          </div>
+          <div class="cardBody">
+            <a href="#" class=""> Banana </a>
+            <div class="itemDiscrption">
+              <p class="amount"><small class="orignalPrice">₹700</small>₹500</p>
+            </div>
+
+            <div class="cartArea">
+              <button class="addToCart">
+                <div class="addPlus notifyMe">notify me</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="itemRating">
+            <p class="rating"><i class="flaticon-star"></i> 4.3</p>
+          </div>
+          <div class="itemVarient">
+            <p class="varientSelect">10kg</p>
+          </div>
+          <div class="itemWishlist">
+            <i class="flaticon-heart-simple-shape-silhouette"></i>
+          </div>
+          <div class="cardImage">
+            <img [src]="catItem.img" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+            <div class="itemDiscrption">
+              <p class="amount"><small class="orignalPrice">₹700</small>₹500</p>
+            </div>
+
+            <div class="cartArea">
+              <button class="addToCart">
+                <div class="addPlus">add to cart</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

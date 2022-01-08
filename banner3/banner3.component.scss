@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.imgFluid {
+  max-width: 100%;
+  height: auto;
+}
+.banner {
+  height: auto;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.bannerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1.5rem;
+}
+// Media Queries
+
+@media only screen and (max-width: 992px) {
+  .bannerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: unset;
+    padding-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .bannerWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: unset;
+    padding-top: 1rem;
+  }
+}

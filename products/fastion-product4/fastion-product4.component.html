@@ -1,0 +1,153 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <!-- Static Active Card -->
+      <div class="item-col">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i
+              class="flaticon-heart-simple-shape-silhouette"
+              style="color: #ed1c24"
+            ></i>
+          </div>
+          <div class="discountLabel">40% off</div>
+          <div class="cardImage">
+            <img src="../../../../assets//img//fastion4/jeans.png" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="#" class="">card title </a>
+            <div class="itemDiscrption">
+              <div class="cartArea">
+                <div class="amountArea">
+                  <p class="amount">rs. 500</p>
+                  <span class="orignalPrice">rs. ₹700</span>
+                </div>
+
+                <div class="addBtn">
+                  <button class="addPlus">
+                    <i class="flaticon-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Overlay -->
+            <div class="overlayBody" style="bottom: 0">
+              <a href="#" class="">
+                KB Team Spirit - Mid-Rise Relaxed Fit Jeans
+              </a>
+              <div class="itemDiscrption">
+                <div class="amountArea">
+                  <p class="amount">rs. 500</p>
+                  <span class="orignalPrice">rs. ₹700</span>
+                </div>
+                <div class="itemVarient">
+                  <p>select style</p>
+                  <div class="itemStyleOption">
+                    <div class="itemStyle itemStyleActive">24</div>
+                    <div class="itemStyle">22</div>
+                    <div class="itemStyle">20</div>
+                    <div class="itemStyle">18</div>
+                    <div class="itemStyle">16</div>
+                  </div>
+                </div>
+                <div class="cartArea">
+                  <div class="addQuantity">
+                    <button class="addMinus">
+                      <i class="flaticon-minus"></i>
+                    </button>
+                    <span>2</span>
+                    <button class="addPlus">
+                      <i class="flaticon-plus"></i>
+                    </button>
+                  </div>
+                  <div class="addToCart">
+                    <span>add</span>
+                    <div class="addBtn">
+                      <button class="addPlus">
+                        <i class="flaticon-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Card -->
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i class="flaticon-heart"></i>
+          </div>
+          <div class="discountLabel">40% off</div>
+
+          <div class="cardImage">
+            <img [src]="catItem.img" alt="" />
+          </div>
+          <div class="cardBody">
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+            <div class="itemDiscrption">
+              <div class="cartArea">
+                <div class="amountArea">
+                  <p class="amount">rs. 500</p>
+                  <span class="orignalPrice">rs. ₹700</span>
+                </div>
+
+                <div class="addBtn">
+                  <button class="addPlus">
+                    <i class="flaticon-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Overlay -->
+            <div class="overlayBody">
+              <a href="#" class="">
+                KB Team Spirit - Mid-Rise Relaxed Fit Jeans
+              </a>
+              <div class="itemDiscrption">
+                <div class="amountArea">
+                  <p class="amount">rs. 500</p>
+                  <span class="orignalPrice">rs. ₹700</span>
+                </div>
+                <div class="itemVarient">
+                  <p>select style</p>
+                  <div class="itemStyleOption">
+                    <div class="itemStyle">24</div>
+                    <div class="itemStyle">22</div>
+                    <div class="itemStyle">20</div>
+                    <div class="itemStyle">18</div>
+                    <div class="itemStyle">16</div>
+                  </div>
+                </div>
+                <div class="cartArea">
+                  <div class="addQuantity">
+                    <button class="addMinus">
+                      <i class="flaticon-minus"></i>
+                    </button>
+                    <span>2</span>
+                    <button class="addPlus">
+                      <i class="flaticon-plus"></i>
+                    </button>
+                  </div>
+                  <div class="addToCart">
+                    <span>add</span>
+                    <div class="addBtn">
+                      <button class="addPlus">
+                        <i class="flaticon-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

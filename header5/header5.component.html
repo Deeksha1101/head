@@ -1,0 +1,116 @@
+<header class="containerFluid" *ngIf="headerData">
+  <!-- Info Bar -->
+  <div class="containerFluid bgLightBlue" *ngIf="headerData.infoBar.show">
+    <div class="containerHalf py05">
+      <div class="row">
+        <div class="col-md-6 pbMd1" *ngIf="headerData.infoBar.leftText">
+          <div class="dFlex dFlexStart alignItemCenter dMdJustifyCenter">
+            <i class="flaticon-phone-call-1 userIcon me1"></i>
+            <p class="">{{ headerData.infoBar.leftText }}</p>
+          </div>
+        </div>
+        <div class="col-md-6" *ngIf="headerData.loginButton.show">
+          <div class="dFlex JustifyEnd alignItemCenter dMdJustifyCenter">
+            <i class="flaticon-user-1 userIcon me1"></i>
+            <div class="accountLink" *ngIf="headerData.loginButton.text">
+              <a href="">{{ headerData.loginButton.text }}</a> |
+              <a href="">Signup</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="containerHalf py05">
+    <div class="row">
+      <!-- Logo -->
+      <div class="col-6 col-md-3 pbMd1">
+        <img
+          src="../../../assets/img/header2/smartBrandLogo.png"
+          class="imgFluid logo"
+          alt=""
+        />
+      </div>
+      <!-- Hamburger -->
+      <div class="col-6 col-lg-4 menuIcon dNone dMdFLex pbMd1">
+        <i class="flaticon-square" (click)="dropMenu()"></i>
+      </div>
+      <!-- Navigation -->
+      <div
+        class="col-md-9 col-lg-7 navCol dMdNone"
+        *ngIf="headerData.menuData && headerData.menuData.show"
+      >
+        <ul class="menuUl" #navMenu>
+          <ng-container *ngFor="let item of headerData.menuData.menuItems">
+            <li [class.dropBrand]="item.dropdownMenu">
+              <a
+                href="{{ item.link }}"
+                class=""
+                [class.dropdownlink]="item.dropdownMenu"
+              >
+                {{ item.title }}
+                <i
+                  *ngIf="item.dropdownMenu"
+                  class="flaticon-down-arrow flatDwonAwrrow"
+                >
+                </i>
+              </a>
+              <div class="dropdownMenuBrand" *ngIf="item.dropdownMenu">
+                <ul class="listUl">
+                  <li
+                    class="dFlex dFLexJustifyBetween alignItemCenter"
+                    *ngFor="let ditem of item.dropdownMenuData"
+                    [class.dropSubMenu]="ditem.subMenuData"
+                  >
+                    <a href="{{ ditem.link }}">{{ ditem.title }}</a>
+
+                    <img
+                      src="../../../assets/myIcon/arrow-right.png"
+                      alt=""
+                      *ngIf="ditem.subMenu && ditem.subMenuData"
+                    />
+                    <div
+                      class="subDropdwnMenu"
+                      *ngIf="ditem.subMenu && ditem.subMenuData"
+                    >
+                      <ul class="listUl">
+                        <li
+                          class="dFlex dFLexJustifyBetween alignItemCenter"
+                          *ngFor="let subMenuItem of ditem.subMenuData"
+                        >
+                          <a href="{{ subMenuItem.link }}">{{
+                            subMenuItem.title
+                          }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+      <!-- Buttons -->
+      <div class="col-lg-2 dFlex JustifyEnd alignItemCenter">
+        <button class="btn">
+          <i class="flaticon-heart-1 userIcon"></i>
+        </button>
+        <button class="btn">
+          <i class="flaticon-loupe userIcon"></i>
+        </button>
+        <button class="btn cartIcon" *ngIf="headerData.cartButton.show">
+          <i class="flaticon-bag userIcon"></i>
+          <span class="badge">3</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Banner -->
+<div class="containerFluid">
+  <div class="containerHalf">
+    <app-banner3></app-banner3>
+  </div>
+</div>

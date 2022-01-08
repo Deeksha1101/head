@@ -1,0 +1,201 @@
+<!-- Header -->
+<header class="containerFluid" *ngIf="headerData">
+  <!-- Info bar -->
+  <div
+    class="containerFluid py05 px1 bgLightBlue"
+    *ngIf="headerData.infoBar.show"
+  >
+    <div class="row">
+      <div class="col-md-6 pbMd1" *ngIf="headerData.infoBar.leftText">
+        <div class="dFlex dFlexStart alignItemCenter dMdJustifyCenter">
+          <p class="">{{ headerData.infoBar.leftText }}</p>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf="headerData.infoBar.rightText">
+        <div class="dFlex JustifyEnd alignItemCenter dMdJustifyCenter">
+          <i class="flaticon-phone-call-1 userIcon me1"></i>
+          <p class="">{{ headerData.infoBar.rightText }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="py05 px1">
+    <div class="row">
+      <!-- Logo -->
+      <div class="col-6 col-md-6 col-lg-3 pbMd1">
+        <img
+          src="../../../assets/img/grocery-shop.png"
+          class="imgFluid logo"
+          alt=""
+        />
+      </div>
+      <!-- Hamburger -->
+      <div class="col-6 col-md-6 col-lg-4 menuIcon dNone dMdFLex pbMd1">
+        <div class="">
+          <i class="flaticon-square" (click)="dropMenu()"></i>
+        </div>
+      </div>
+      <!-- Input search -->
+      <div
+        class="col-md-6 col-lg-5 dFlex JustifyCenter alignItemCenter dMdNone"
+        *ngIf="headerData.search.show"
+      >
+        <input
+          type="text"
+          class="formControl"
+          placeholder="{{ headerData.search.placholderText }}"
+        />
+        <button class="btn searchBtn">
+          <i class="flaticon-loupe"></i>
+        </button>
+      </div>
+      <!-- Navigation for Sm Screen -->
+      <div
+        class="col-12 navCol dNone"
+        *ngIf="headerData.menuData && headerData.menuData.show"
+      >
+        <ul class="menuUl" #navMenu>
+          <ng-container *ngFor="let item of headerData.menuData.menuItems">
+            <li [class.dropBrand]="item.dropdownMenu">
+              <a
+                href="{{ item.link }}"
+                class=""
+                [class.dropdownlink]="item.dropdownMenu"
+              >
+                {{ item.title }}
+                <i
+                  *ngIf="item.dropdownMenu"
+                  class="flaticon-down-arrow flatDwonAwrrow"
+                >
+                </i>
+              </a>
+              <div class="dropdownMenuBrand" *ngIf="item.dropdownMenu">
+                <ul class="listUl">
+                  <li
+                    class="dFlex dFLexJustifyBetween alignItemCenter"
+                    *ngFor="let ditem of item.dropdownMenuData"
+                    [class.dropSubMenu]="ditem.subMenuData"
+                  >
+                    <a href="{{ ditem.link }}">{{ ditem.title }}</a>
+
+                    <img
+                      src="../../../assets/myIcon/arrow-right.png"
+                      alt=""
+                      *ngIf="ditem.subMenu && ditem.subMenuData"
+                    />
+                    <div
+                      class="subDropdwnMenu"
+                      *ngIf="ditem.subMenu && ditem.subMenuData"
+                    >
+                      <ul class="listUl">
+                        <li
+                          class="dFlex dFLexJustifyBetween alignItemCenter"
+                          *ngFor="let subMenuItem of ditem.subMenuData"
+                        >
+                          <a href="{{ subMenuItem.link }}">{{
+                            subMenuItem.title
+                          }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+      <!-- Icons -->
+      <div
+        class="col-md-4 dFlex order-md-2 order-lg-1 JustifyEnd alignItemCenter"
+      >
+        <button
+          class="btn dFlex dFLexJustifyBetween alignItemCenter gap05"
+          *ngIf="headerData.wishlistButton.show"
+        >
+          <i class="flaticon-heart-1 userIcon"></i>
+          <span class="fwBold">
+            {{ headerData.wishlistButton.text | titlecase }}
+          </span>
+        </button>
+        <span *ngIf="headerData.wishlistButton.show">|</span>
+        <button
+          class="btn dFlex dFLexJustifyBetween alignItemCenter gap05"
+          *ngIf="headerData.loginButton.show"
+        >
+          <i class="flaticon-user userIcon"></i>
+          <span class="fwBold">
+            {{ headerData.loginButton.text | titlecase }}
+          </span>
+        </button>
+        <span *ngIf="headerData.loginButton.show">|</span>
+        <button class="btn cartIcon" *ngIf="headerData.cartButton.show">
+          <i class="flaticon-shopping-cart userIcon"></i>
+          <span class="fwBold">{{ headerData.cartButton.text }}</span>
+        </button>
+      </div>
+      <!-- Navigation for Lg screen -->
+      <div
+        class="col-md-8 col-lg-12 order-md-1 order-lg-2 navCol dMdNone dLgFlex"
+        *ngIf="headerData.menuData && headerData.menuData.show"
+      >
+        <ul class="menuUl">
+          <ng-container *ngFor="let item of headerData.menuData.menuItems">
+            <li [class.dropBrand]="item.dropdownMenu">
+              <a
+                href="{{ item.link }}"
+                class=""
+                [class.dropdownlink]="item.dropdownMenu"
+              >
+                {{ item.title }}
+                <i
+                  *ngIf="item.dropdownMenu"
+                  class="flaticon-down-arrow flatDwonAwrrow"
+                >
+                </i>
+              </a>
+              <div class="dropdownMenuBrand" *ngIf="item.dropdownMenu">
+                <ul class="listUl">
+                  <li
+                    class="dFlex dFLexJustifyBetween alignItemCenter"
+                    *ngFor="let ditem of item.dropdownMenuData"
+                    [class.dropSubMenu]="ditem.subMenuData"
+                  >
+                    <a href="{{ ditem.link }}">{{ ditem.title }}</a>
+
+                    <img
+                      src="../../../assets/myIcon/arrow-right.png"
+                      alt=""
+                      *ngIf="ditem.subMenu && ditem.subMenuData"
+                    />
+                    <div
+                      class="subDropdwnMenu"
+                      *ngIf="ditem.subMenu && ditem.subMenuData"
+                    >
+                      <ul class="listUl">
+                        <li
+                          class="dFlex dFLexJustifyBetween alignItemCenter"
+                          *ngFor="let subMenuItem of ditem.subMenuData"
+                        >
+                          <a href="{{ subMenuItem.link }}">{{
+                            subMenuItem.title
+                          }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Banner Slider -->
+<div class="containerFluid">
+  <app-banner></app-banner>
+</div>

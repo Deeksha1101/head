@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.containerFluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.containerHalf {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+// Porduct Category Css
+.productCard {
+  position: relative;
+  max-width: 35rem;
+  margin: 16px auto;
+  text-align: center;
+  word-wrap: break-word;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.circle {
+  position: relative;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cardImage {
+  position: absolute;
+  bottom: -1rem;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  line-height: 0;
+  padding: 0.5rem;
+
+  img {
+    max-width: 100%;
+    min-height: 100%;
+  }
+}
+.cardBody {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  a {
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.stretchedLink::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+}
+
+.item-row {
+  text-align: center;
+  margin: 0 -16px;
+  .item-col {
+    width: 25%;
+    // width: 20%;
+    display: inline-block;
+    padding: 0 16px;
+  }
+  &.sidebar {
+    .item-col {
+      width: 25%;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .item-row {
+    margin: 0 -4px;
+    .item-col {
+      width: 25%;
+      //   width: 25%;
+      //   padding: 0 4px;
+    }
+    &.sidebar {
+      .item-col {
+        width: 33.33%;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .item-row {
+    .item-col {
+      width: 50%;
+      //   width: 33.33%;
+    }
+    &.sidebar {
+      .item-col {
+        width: 50%;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .item-row {
+    .item-col {
+      width: 50%;
+      //   width: 50%;
+    }
+  }
+  .containerHalf {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 320px) {
+  .item-row {
+    .item-col {
+      width: 100%;
+    }
+  }
+}

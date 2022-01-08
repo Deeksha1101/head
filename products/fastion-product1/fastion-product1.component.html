@@ -1,0 +1,75 @@
+<div class="containerFluid">
+  <div class="containerHalf">
+    <div class="item-row">
+      <div class="item-col">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i
+              class="flaticon-heart-simple-shape-silhouette"
+              style="color: #ff0000"
+            ></i>
+          </div>
+          <div class="cardImage">
+            <img src="../../../../assets/img/fastion1/russ-shirt1.png" alt="" />
+            <div class="itemRating">
+              <p class="rating"><i class="flaticon-star"></i> 4.3</p>
+            </div>
+          </div>
+          <div class="cardBody">
+            <a href="#" class=""> comfort jacket </a>
+            <div class="itemDiscrption">
+              <!-- Price and rating -->
+              <div class="amountArea">
+                <p class="amount">
+                  rs. 500 <small class="orignalPrice">₹700</small>
+                </p>
+                <p class="discountLabel">40% off</p>
+              </div>
+            </div>
+
+            <button class="addQuantity">
+              <div class="addMinus">
+                <i class="flaticon-minus"></i>
+              </div>
+              <span>2</span>
+              <div class="addPlus">
+                <i class="flaticon-plus"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="item-col" *ngFor="let catItem of categoryData">
+        <div class="productCard">
+          <div class="itemWishlist">
+            <i class="flaticon-heart-simple-shape-silhouette"></i>
+          </div>
+          <div class="cardImage">
+            <img [src]="catItem.img" alt="" />
+            <div class="itemRating">
+              <p class="rating"><i class="flaticon-star"></i> 4.3</p>
+            </div>
+          </div>
+          <div class="cardBody">
+            <a href="{{ catItem.link }}" class="">
+              {{ catItem.title }}
+            </a>
+            <div class="itemDiscrption">
+              <!-- Price and rating -->
+              <div class="amountArea">
+                <p class="amount">
+                  rs. 500 <small class="orignalPrice">₹700</small>
+                </p>
+                <p class="discountLabel">40% off</p>
+              </div>
+            </div>
+
+            <button class="addBtn">
+              <div class="addPlus">ADD</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

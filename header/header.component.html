@@ -1,0 +1,274 @@
+<!-- Header -->
+<header *ngIf="headerData">
+  <div class="containerFluid borderBottom">
+    <!-- Notification bar -->
+    <div
+      class="conatinerFluid"
+      *ngIf="headerData.notificationBar.show"
+      [ngStyle]="{
+        background: headerData.notificationBar.color.backgroundColor,
+        color: headerData.notificationBar.color.foregroundColor
+      }"
+    >
+      <div class="containerHalf textCenter py05">
+        <small>
+          {{ headerData.notificationBar.text }}
+        </small>
+      </div>
+    </div>
+    <!-- Info bar -->
+    <div class="containerFluid borderBottom" *ngIf="headerData.infoBar.show">
+      <div class="containerHalf">
+        <div class="row">
+          <div
+            class="col-md-6 dFlex alignItemCenter dMdJustifyCenter"
+            *ngIf="headerData.infoBar.leftText"
+          >
+            <small> {{ headerData.infoBar.leftText }}</small>
+          </div>
+          <div class="col-md-6" *ngIf="headerData.infoBar.leftText">
+            <div class="dFlex JustifyEnd alignItemCenter gap1 dMdJustifyCenter">
+              <small>{{ headerData.infoBar.leftText }}</small>
+              <div class="borderLeft my03">
+                <div class="dropdown">
+                  <button class="btn" (click)="dropLang()">
+                    <span class="me1">English</span>
+                    <i class="flaticon-down-arrow flatDwonAwrrow"></i>
+                  </button>
+                  <div class="dropdownMenuLanguage" #langDropdown>
+                    <ul class="listUl langUl py0">
+                      <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                        Hindi
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- logo, search, account -->
+    <div class="containerHalf py1">
+      <div class="row">
+        <!-- Logo -->
+        <div class="col-6 col-lg-3">
+          <img src="../../../assets/img/Vector Smart Object.png" alt="" />
+        </div>
+        <!-- Menu button -->
+        <div class="col-6 dNone dMdFLex JustifyEnd alignItemCenter">
+          <button class="btn" (click)="dropNav()">
+            <i class="flaticon-square flatSquare"></i>
+          </button>
+        </div>
+        <!-- Input Search -->
+        <div
+          class="col-md-6 col-lg-5 dFlex JustifyCenter alignItemCenter dMdNone"
+          *ngIf="headerData.search.show"
+        >
+          <input
+            type="text"
+            class="formControl"
+            placeholder="{{ headerData.search.placholderText }}"
+          />
+          <button class="btn searchBtn">
+            <i class="flaticon-loupe"></i>
+          </button>
+        </div>
+        <!-- Account -->
+        <div class="col-lg-4 dFlex JustifyEnd alignItemCenter gap1 dMdNone">
+          <div class="AcountLink" *ngIf="headerData.loginButton.show">
+            <a href="">{{ headerData.loginButton.text }}</a> |
+            <a href="">Create Account</a>
+          </div>
+          <div class="" *ngIf="headerData.cartButton.show">
+            <button class="cartBtn">
+              <span class="p05">{{ headerData.cartButton.text }}</span>
+              <button class="cartIcon">
+                <i class="flaticon-shopping-basket"></i>
+                <span class="badge">0</span>
+              </button>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="containerFluid">
+      <div class="containerHalf pb1 dMdNone" #navDrop>
+        <div class="row">
+          <!-- Category button -->
+          <div class="col-md-3 dLgNone">
+            <div class="dropdown">
+              <button class="catBtn" (click)="dropClick()">
+                <i class="flaticon-letter dropdownIcon" #dropIcon></i>
+                ALL CATEGORIES
+              </button>
+              <div class="dropdownMenu" #catDropdown>
+                <ul class="listUl">
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    Fruits & Vegetables
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                  <li
+                    class="
+                      dFlex
+                      dFLexJustifyBetween
+                      alignItemCenter
+                      dropSubMenu
+                    "
+                  >
+                    Grocery & Stables
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+
+                    <div class="subDropdwnMenu">
+                      <ul class="listUl">
+                        <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                          <a href="#"> example1 </a>
+                        </li>
+                        <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                          <a href="#"> example2 </a>
+                        </li>
+                        <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                          <a href="#"> example3 </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    Personal Care
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    House Hold Item
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    Milk & Dairy Products
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    Bread & Bakery
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    Frozen Foods
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    Biscuits & Snacks
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                  <li class="dFlex dFLexJustifyBetween alignItemCenter">
+                    Desserts
+                    <img src="../../../assets/myIcon/arrow-right.png" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Navigation for lg screen -->
+          <div
+            class="col-lg-9 navCol"
+            *ngIf="headerData.menuData && headerData.menuData.show"
+          >
+            <ul class="menuUl">
+              <ng-container *ngFor="let item of headerData.menuData.menuItems">
+                <li [class.dropBrand]="item.dropdownMenu">
+                  <a
+                    href="{{ item.link }}"
+                    class=""
+                    [class.dropdownlink]="item.dropdownMenu"
+                  >
+                    {{ item.title }}
+                    <i
+                      *ngIf="item.dropdownMenu"
+                      class="flaticon-down-arrow flatDwonAwrrow"
+                    >
+                    </i>
+                  </a>
+                  <div class="dropdownMenuBrand" *ngIf="item.dropdownMenu">
+                    <ul class="listUl">
+                      <li
+                        class="dFlex dFLexJustifyBetween alignItemCenter"
+                        *ngFor="let ditem of item.dropdownMenuData"
+                        [class.dropSubMenu]="ditem.subMenuData"
+                      >
+                        <a href="{{ ditem.link }}">{{ ditem.title }}</a>
+
+                        <img
+                          src="../../../assets/myIcon/arrow-right.png"
+                          alt=""
+                          *ngIf="ditem.subMenu && ditem.subMenuData"
+                        />
+                        <div
+                          class="subDropdwnMenu"
+                          *ngIf="ditem.subMenu && ditem.subMenuData"
+                        >
+                          <ul class="listUl">
+                            <li
+                              class="dFlex dFLexJustifyBetween alignItemCenter"
+                              *ngFor="let subMenuItem of ditem.subMenuData"
+                            >
+                              <a href="{{ subMenuItem.link }}">
+                                {{ subMenuItem.title }}
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Search and account for md screen -->
+      <div class="containerHalf pb1 dNone dMdBlock">
+        <div class="row">
+          <!-- Input search -->
+          <div
+            class="col-12 dFlex JustifyCenter alignItemCenter"
+            *ngIf="headerData.search.show"
+          >
+            <input
+              type="text"
+              class="formControl"
+              placeholder="{{ headerData.search.placholderText }}"
+            />
+
+            <button class="btn searchBtn">
+              <i class="flaticon-loupe"></i>
+            </button>
+          </div>
+          <!-- Account -->
+          <div class="col-12 dFlex JustifyEnd alignItemCenter gap1 mt1">
+            <div class="AcountLink" *ngIf="headerData.loginButton.show">
+              <a href="">{{ headerData.loginButton.text }}</a> |
+              <a href="">Create Account</a>
+            </div>
+            <div class="" *ngIf="headerData.cartButton.show">
+              <button class="cartBtn">
+                <span class="p05">{{ headerData.cartButton.text }}</span>
+                <button class="cartIcon">
+                  <i class="flaticon-shopping-basket"></i>
+                  <span class="badge">5</span>
+                </button>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Banner -->
+<div class="containerFluid py1">
+  <div class="containerHalf">
+    <app-banner2></app-banner2>
+  </div>
+</div>
